@@ -4,50 +4,48 @@ import csv
 
 budget_data = os.path.join("Resources", "budget_data.csv")
 
-# Create lists to store the data
-month = []
-day = []
-profit = []
+#Create empty lists for the data
+date = []
+budget = []
+changes = []
 
 # Open and Read the CSV File
-with open(budget_data) as csv_file:
-    csv_reader = csv.reader(csv_file, delimiter=",")
+with open(budget_data, 'r') as csv_file:
+    reader = csv.reader(csv_file, delimiter=",")
+    header = next(reader)
 
-# Split the month from the day
-    for row in csv_reader:
-        # Split the month from the day
-        split_column = row[0].split("-")
-        month.append(split_column[0])
-        day.append(split_column[1])
-        profit.append(row[1])
-
-
-
+# Append the csv data to the empy lists
+    for row in reader:
+        date.append(row[0])
+        budget.append(int(row[1]))
 
 # Calculate the total number of months included in the dataset
-#total_months = 
+total_months = len(date)
 # Calculate the net total amount of "Profit/Losses" over the entire period
-#total =
-
+net_total = sum(budget)
 # Calculate the changes in "Profit/Losses" over the entire period, and the average
-#average_change = 
+for i in range(1, len(budget)):
+    change = budget[i] - budget[i-1]
+    changes.append(change)
+average_change = sum(changes) / len(changes)
 
 # What is the greatest increase in profits (date and amount) over the entire period?
-#highest_increase = 
+max_index = budget.index(max(budget))
+increase_date = date[max_index]
+increase_amount = max(budget)
 # What is the greatest decrease in profits (date and amount) over the entire period?
-#highest_decrease = 
+min_index = budget.index(min(budget))
+min_date = date[min_index]
+min_amount = min(budget)
 
-#Print the title
-#print('Financial Analysis')
-#Print the total months in the dataset
-#print('Total Months:' + total_months)
-#Print the net total profit/losses
-#print('Total:' + total)
-#Print the total changes
-#print('Average Change:' + average_change)
-#Print the greatest profits
-#print('Greatest Increase in Profits:' + highest_increase)
-#Print the greatest losses
-#print('Greatest Decrease in Profits:' + highest_decrease)
+print(f"""
+Financial Analysis
+Total Months: {total_months}
+Total: ${net_total}
+Average Change: {average_change:.2f}
+Greatest Increase in Profits: {increase_date} ({increase_amount})
+Greatest Decrease in Profits: {min_date} ({min_amount})
+"""
+)
 
 
