@@ -1,0 +1,24 @@
+Last login: Sun Jul  9 23:11:43 on ttys000
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+(base) Katherines-Mini:PyPoll katherinerhyno$ conda activate PythonData
+(PythonData) Katherines-Mini:PyPoll katherinerhyno$ ls
+Analysis	Resources	main.py
+(PythonData) Katherines-Mini:PyPoll katherinerhyno$ python main.py
+Total Votes: 369711
+Charles Casper Stockham: 23.05% (85213)
+Diana DeGette: 73.81% (272892)
+Raymon Anthony Doane: 3.14% (11606)
+Winner: Diana DeGette
+(PythonData) Katherines-Mini:PyPoll katherinerhyno$ 
+
+
+
+
+
+
+
+
+

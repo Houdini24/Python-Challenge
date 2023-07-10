@@ -4,13 +4,28 @@ import csv
 
 budget_data = os.path.join("Resources", "budget_data.csv")
 
+# Create lists to store the data
+month = []
+day = []
+profit = []
 
-#Open and Read the CSV File
+# Open and Read the CSV File
 with open(budget_data) as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=",")
 
+# Split the month from the day
+    for row in csv_reader:
+        # Split the month from the day
+        split_column = row[0].split("-")
+        month.append(split_column[0])
+        day.append(split_column[1])
+        profit.append(row[1])
+
+
+
+
 # Calculate the total number of months included in the dataset
-#total_months =
+#total_months = 
 # Calculate the net total amount of "Profit/Losses" over the entire period
 #total =
 
