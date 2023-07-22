@@ -26,7 +26,7 @@ For this Challenge, I was tasked with helping a small, rural town modernize its 
 ## PyPoll Analysis
 My analysis yielded the following results:
 
-![](https://github.com/Houdini24/Python-Challenge/blob/main/PyPoll/Analysis/PyPoll%20Saved%20Output.txt)
+![](https://github.com/Houdini24/Python-Challenge/blob/main/PyPoll/Analysis/PyPoll%20Election%20Results.png)
 
 ### Acknowledgements
 I used the following resources to help complete this project:
